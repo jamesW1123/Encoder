@@ -35,6 +35,8 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnConvertRNA = new System.Windows.Forms.Button();
             this.btnConvertDNA = new System.Windows.Forms.Button();
+            this.btnCompliment = new System.Windows.Forms.Button();
+            this.btnFindDNA = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -84,6 +86,8 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.btnFindDNA);
+            this.panel3.Controls.Add(this.btnCompliment);
             this.panel3.Controls.Add(this.btnConvertRNA);
             this.panel3.Controls.Add(this.btnConvertDNA);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -97,10 +101,10 @@
             // 
             this.btnConvertRNA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnConvertRNA.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnConvertRNA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConvertRNA.Location = new System.Drawing.Point(120, 23);
+            this.btnConvertRNA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConvertRNA.Location = new System.Drawing.Point(83, 14);
             this.btnConvertRNA.Name = "btnConvertRNA";
-            this.btnConvertRNA.Size = new System.Drawing.Size(81, 50);
+            this.btnConvertRNA.Size = new System.Drawing.Size(73, 50);
             this.btnConvertRNA.TabIndex = 1;
             this.btnConvertRNA.Text = "Convert RNA";
             this.btnConvertRNA.UseVisualStyleBackColor = true;
@@ -110,14 +114,40 @@
             // 
             this.btnConvertDNA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnConvertDNA.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnConvertDNA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConvertDNA.Location = new System.Drawing.Point(12, 23);
+            this.btnConvertDNA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConvertDNA.Location = new System.Drawing.Point(12, 14);
             this.btnConvertDNA.Name = "btnConvertDNA";
-            this.btnConvertDNA.Size = new System.Drawing.Size(81, 50);
+            this.btnConvertDNA.Size = new System.Drawing.Size(65, 50);
             this.btnConvertDNA.TabIndex = 0;
             this.btnConvertDNA.Text = "Convert DNA";
             this.btnConvertDNA.UseVisualStyleBackColor = true;
             this.btnConvertDNA.Click += new System.EventHandler(this.btnConvertDNA_Click);
+            // 
+            // btnCompliment
+            // 
+            this.btnCompliment.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCompliment.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnCompliment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCompliment.Location = new System.Drawing.Point(162, 14);
+            this.btnCompliment.Name = "btnCompliment";
+            this.btnCompliment.Size = new System.Drawing.Size(98, 50);
+            this.btnCompliment.TabIndex = 2;
+            this.btnCompliment.Text = "Convert Compliment";
+            this.btnCompliment.UseVisualStyleBackColor = true;
+            this.btnCompliment.Click += new System.EventHandler(this.btnCompliment_Click);
+            // 
+            // btnFindDNA
+            // 
+            this.btnFindDNA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFindDNA.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnFindDNA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFindDNA.Location = new System.Drawing.Point(266, 14);
+            this.btnFindDNA.Name = "btnFindDNA";
+            this.btnFindDNA.Size = new System.Drawing.Size(65, 50);
+            this.btnFindDNA.TabIndex = 3;
+            this.btnFindDNA.Text = "Find DNA";
+            this.btnFindDNA.UseVisualStyleBackColor = true;
+            this.btnFindDNA.Click += new System.EventHandler(this.btnFindDNA_Click);
             // 
             // Form1
             // 
@@ -149,6 +179,8 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnConvertDNA;
         private System.Windows.Forms.Button btnConvertRNA;
+        private System.Windows.Forms.Button btnCompliment;
+        private System.Windows.Forms.Button btnFindDNA;
     }
 }
 
