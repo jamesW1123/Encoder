@@ -1,0 +1,10 @@
+D:\Repos\Encoder\Encoder\bin\Debug\Encoder.exe.config
+D:\Repos\Encoder\Encoder\bin\Debug\Encoder.exe
+D:\Repos\Encoder\Encoder\bin\Debug\Encoder.pdb
+D:\Repos\Encoder\Encoder\obj\Debug\Encoder.csprojAssemblyReference.cache
+D:\Repos\Encoder\Encoder\obj\Debug\Encoder.Form1.resources
+D:\Repos\Encoder\Encoder\obj\Debug\Encoder.Properties.Resources.resources
+D:\Repos\Encoder\Encoder\obj\Debug\Encoder.csproj.GenerateResource.cache
+D:\Repos\Encoder\Encoder\obj\Debug\Encoder.csproj.CoreCompileInputs.cache
+D:\Repos\Encoder\Encoder\obj\Debug\Encoder.exe
+D:\Repos\Encoder\Encoder\obj\Debug\Encoder.pdb
