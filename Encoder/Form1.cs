@@ -96,6 +96,11 @@ namespace Encoder
             txtOutput.Text = result;
         }
 
+        private void btnFindCommon_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnFindDNA_Click(object sender, EventArgs e)
         {
             // Define a regular expression to match
@@ -164,6 +169,5 @@ namespace Encoder
             return finalResult;
         }
 
-       
     }
 }

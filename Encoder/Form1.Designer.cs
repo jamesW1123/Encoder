@@ -37,6 +37,7 @@
             this.btnConvertDNA = new System.Windows.Forms.Button();
             this.btnCompliment = new System.Windows.Forms.Button();
             this.btnFindDNA = new System.Windows.Forms.Button();
+            this.btnFindCommon = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -48,7 +49,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(349, 130);
+            this.panel1.Size = new System.Drawing.Size(419, 130);
             this.panel1.TabIndex = 0;
             // 
             // txtInput
@@ -59,7 +60,7 @@
             this.txtInput.Location = new System.Drawing.Point(0, 0);
             this.txtInput.Multiline = true;
             this.txtInput.Name = "txtInput";
-            this.txtInput.Size = new System.Drawing.Size(349, 130);
+            this.txtInput.Size = new System.Drawing.Size(419, 130);
             this.txtInput.TabIndex = 0;
             this.txtInput.Enter += new System.EventHandler(this.txtInput_Enter);
             // 
@@ -69,7 +70,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 209);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(349, 136);
+            this.panel2.Size = new System.Drawing.Size(419, 136);
             this.panel2.TabIndex = 1;
             // 
             // txtOutput
@@ -80,12 +81,13 @@
             this.txtOutput.Multiline = true;
             this.txtOutput.Name = "txtOutput";
             this.txtOutput.ReadOnly = true;
-            this.txtOutput.Size = new System.Drawing.Size(349, 136);
+            this.txtOutput.Size = new System.Drawing.Size(419, 136);
             this.txtOutput.TabIndex = 1;
             this.txtOutput.TabStop = false;
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.btnFindCommon);
             this.panel3.Controls.Add(this.btnFindDNA);
             this.panel3.Controls.Add(this.btnCompliment);
             this.panel3.Controls.Add(this.btnConvertRNA);
@@ -94,7 +96,7 @@
             this.panel3.Location = new System.Drawing.Point(0, 130);
             this.panel3.MinimumSize = new System.Drawing.Size(0, 48);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(349, 79);
+            this.panel3.Size = new System.Drawing.Size(419, 79);
             this.panel3.TabIndex = 2;
             // 
             // btnConvertRNA
@@ -102,7 +104,7 @@
             this.btnConvertRNA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnConvertRNA.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnConvertRNA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConvertRNA.Location = new System.Drawing.Point(83, 14);
+            this.btnConvertRNA.Location = new System.Drawing.Point(81, 14);
             this.btnConvertRNA.Name = "btnConvertRNA";
             this.btnConvertRNA.Size = new System.Drawing.Size(73, 50);
             this.btnConvertRNA.TabIndex = 1;
@@ -115,7 +117,7 @@
             this.btnConvertDNA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnConvertDNA.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnConvertDNA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConvertDNA.Location = new System.Drawing.Point(12, 14);
+            this.btnConvertDNA.Location = new System.Drawing.Point(10, 14);
             this.btnConvertDNA.Name = "btnConvertDNA";
             this.btnConvertDNA.Size = new System.Drawing.Size(65, 50);
             this.btnConvertDNA.TabIndex = 0;
@@ -128,7 +130,7 @@
             this.btnCompliment.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCompliment.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnCompliment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCompliment.Location = new System.Drawing.Point(162, 14);
+            this.btnCompliment.Location = new System.Drawing.Point(160, 14);
             this.btnCompliment.Name = "btnCompliment";
             this.btnCompliment.Size = new System.Drawing.Size(98, 50);
             this.btnCompliment.TabIndex = 2;
@@ -141,7 +143,7 @@
             this.btnFindDNA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnFindDNA.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnFindDNA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFindDNA.Location = new System.Drawing.Point(266, 14);
+            this.btnFindDNA.Location = new System.Drawing.Point(264, 14);
             this.btnFindDNA.Name = "btnFindDNA";
             this.btnFindDNA.Size = new System.Drawing.Size(65, 50);
             this.btnFindDNA.TabIndex = 3;
@@ -149,11 +151,24 @@
             this.btnFindDNA.UseVisualStyleBackColor = true;
             this.btnFindDNA.Click += new System.EventHandler(this.btnFindDNA_Click);
             // 
+            // btnFindCommon
+            // 
+            this.btnFindCommon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFindCommon.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnFindCommon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFindCommon.Location = new System.Drawing.Point(335, 14);
+            this.btnFindCommon.Name = "btnFindCommon";
+            this.btnFindCommon.Size = new System.Drawing.Size(72, 50);
+            this.btnFindCommon.TabIndex = 4;
+            this.btnFindCommon.Text = "Find Common";
+            this.btnFindCommon.UseVisualStyleBackColor = true;
+            this.btnFindCommon.Click += new System.EventHandler(this.btnFindCommon_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(349, 345);
+            this.ClientSize = new System.Drawing.Size(419, 345);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -181,6 +196,7 @@
         private System.Windows.Forms.Button btnConvertRNA;
         private System.Windows.Forms.Button btnCompliment;
         private System.Windows.Forms.Button btnFindDNA;
+        private System.Windows.Forms.Button btnFindCommon;
     }
 }
 
