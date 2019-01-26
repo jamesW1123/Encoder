@@ -15,9 +15,11 @@ namespace Encoder
     /// 
     /// Assumptions:
     /// When finding a sequnce of DNA, only the first index of a valid DNA strand should be returned
+    /// When finding the longest common strand of DNA between two strings, a new line separates the two input strands
+    /// When finding the longest common strand of DNA between two strings, the two strings are valid DNA strands
     /// 
     /// </summary>
-     
+
 
     public partial class Form1 : Form
     {
@@ -82,7 +84,7 @@ namespace Encoder
         private void btnConvertDNA_Click(object sender, EventArgs e)
         {
             // Convert to DNA
-            txtOutput.Text = ConvertDNA();            
+            txtOutput.Text = ConvertDNA();
         }
 
         private void btnConvertRNA_Click(object sender, EventArgs e)
@@ -98,7 +100,65 @@ namespace Encoder
 
         private void btnFindCommon_Click(object sender, EventArgs e)
         {
+            /*
+             * Algorithm:
+             * Input strings L1 with length m and L2 with length n
+             * Two Cases:
+             * The last characters match or they do not match
+             * If the last characters match:
+             *      Increment the length of LCS by 1 and process L1[m-1] and L2[n-1]
+             * If they do not match:
+             * 	    Find the max of L1[m-1]L2[n] and L1[m]L2[n-1]
+             * Build the subsequence string using the length matrix starting at the bottom right corner
+             * If the characters match
+             * 	    It is part of the longest subsequence and move diagonally up and left
+             * If they do not match
+             * 	    Check if the cell to the left or up greater and move to the cell that is greater
+             * 	    If they are equal, just move left
+             * Reverse the resulting string and output the final result
+             */
 
+            // Split the input into two DNA strands and define variables to hold the two strings and the lengths of both
+            string[] strands = txtInput.Text.Split(new char[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+            string strand1 = strands[0];
+            string strand2 = strands[1];
+            int strand1Length = strand1.Length;
+            int strand2Length = strand2.Length;
+            int[,] length = new int[strand1Length + 1, strand2Length + 1];
+
+            // Fill the length matrix with the lengths of the longest sebsequence of each character
+            for (int i = 0; i <= strand1Length; i++)
+            {
+                for (int j = 0; j <= strand2Length; j++)
+                {
+                    if (i == 0 || j == 0) length[i, j] = 0;
+                    else if (strand1[i - 1] == strand2[j - 1]) length[i, j] = length[i - 1, j - 1] + 1;
+                    else length[i, j] = Math.Max(length[i - 1, j], length[i, j - 1]);
+                }
+            }
+
+            // Put together the longest subsequence
+            string result = "";
+            int index = length[strand1Length, strand2Length];
+            int k = strand1Length;
+            int m = strand2Length;
+            while (k > 0 && m > 0)
+            {
+                if (strand1[k - 1] == strand2[m - 1])
+                {
+                    // The characters match, move diagonally up and left 
+                    result += strand1[k - 1];
+                    k--;
+                    m--;
+                    index--;
+                }
+                else if (length[k - 1, m] > length[k, m - 1]) k--; // Determine whether to move left or up in the matrix
+                else m--; // Just move left
+            }
+
+            // Reverse the resulting string and output the final result
+            string finalResult = new string(result.Reverse().ToArray());
+            txtOutput.Text = finalResult;
         }
 
         private void btnFindDNA_Click(object sender, EventArgs e)
