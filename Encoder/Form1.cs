@@ -16,7 +16,6 @@ namespace Encoder
     /// Assumptions:
     /// When finding a sequnce of DNA, only the first index of a valid DNA strand should be returned
     /// When finding the longest common strand of DNA between two strings, a new line separates the two input strands
-    /// When finding the longest common strand of DNA between two strings, the two strings are valid DNA strands
     /// 
     /// </summary>
 
@@ -125,6 +124,17 @@ namespace Encoder
             int strand1Length = strand1.Length;
             int strand2Length = strand2.Length;
             int[,] length = new int[strand1Length + 1, strand2Length + 1];
+
+            // Define a regular expression to match
+            Regex regex = new Regex(@"[^ATGC]");
+            Match match1 = regex.Match(strand1);
+            Match match2 = regex.Match(strand2);
+
+            if (match1.Success || match2.Success)
+            {
+                txtOutput.Text = "Invalid DNA sequence";
+                return;
+            }            
 
             // Fill the length matrix with the lengths of the longest sebsequence of each character
             for (int i = 0; i <= strand1Length; i++)
