@@ -11,6 +11,14 @@ using System.Windows.Forms;
 
 namespace Encoder
 {
+    /// <summary>
+    /// 
+    /// Assumptions:
+    /// When finding a sequnce of DNA, only the first index of a valid DNA strand should be returned
+    /// 
+    /// </summary>
+     
+
     public partial class Form1 : Form
     {
 
@@ -92,12 +100,11 @@ namespace Encoder
         {
             // Define a regular expression to match
             Regex regex = new Regex(@"[ATGC]{4,}");
+
             Match match = regex.Match(txtInput.Text);
 
-            int index = -1;
-            if (match.Success) index = match.Index;
-
-            txtOutput.Text = index + "\r\n" + match;
+            if (match.Success) txtOutput.Text = "index = " + match.Index;
+            else txtOutput.Text = "index = -1";
         }
 
         private void txtInput_Enter(object sender, EventArgs e)
